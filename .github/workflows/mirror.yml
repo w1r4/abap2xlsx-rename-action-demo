@@ -1,0 +1,24 @@
+name: abap2xlsx-mirror
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write  # for peter-evans/create-pull-request to create branch
+  pull-requests: write  # for peter-evans/create-pull-request to create a PR
+
+jobs:
+  mirror-mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - uses: actions/checkout@v4
+    - uses: abap2xlsx/abap2xlsx-rename-action
+    - run: git status
+    - name: Open PR
+      uses: peter-evans/create-pull-request@v5
+      with:
+        title: "ABAP: abap2xlsx, automatic update"
+        branch: automatic/abap2xlsx-update
+        body: |
+          Automatic update of abap2xlsx
