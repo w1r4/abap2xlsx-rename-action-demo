@@ -13,7 +13,7 @@ jobs:
     timeout-minutes: 5
     steps:
     - uses: actions/checkout@v4
-    - uses: abap2xlsx/abap2xlsx-rename-action
+    - uses: abap2xlsx/abap2xlsx-rename-action@main
     - run: git status
     - name: Open PR
       uses: peter-evans/create-pull-request@v5
