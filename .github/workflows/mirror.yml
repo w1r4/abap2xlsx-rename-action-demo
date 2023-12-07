@@ -20,5 +20,6 @@ jobs:
       with:
         title: "ABAP: abap2xlsx, automatic update"
         branch: automatic/abap2xlsx-update
+        path: src
         body: |
           Automatic update of abap2xlsx
